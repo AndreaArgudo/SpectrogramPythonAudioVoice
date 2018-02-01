@@ -17,7 +17,8 @@ def SpectrogramSentences(wav_file):
     fs = 44100    # Sampling frequency # 2050Hz, 44100Hz
     pxx, freqs, bins, im = plt.specgram(data, nfft,fs)
     plt.axis('on')
-        
+    
+    # Plot sentence signal   
     plt.savefig('/Users/Andrea/AnacondaProjects/Lab5/SpectrogramFrases.png',
                 dpi=300, # Dots per inch
                 frameon='false',
@@ -32,7 +33,7 @@ def SpectrogramSentences(wav_file):
 # Ramdom normal hearing patient:/Users/Andrea/AnacondaProjects/Pacientes_audios_2017_2018/658140.wav
 # Navarra Test Corpus/Sentences with clue and noise(1): "La mujer limpiaba el suelo todos los días"
     
-    
+    # Plot spectrogram sentence
     plt.savefig('/Users/Andrea/AnacondaProjects/Lab5/SpectrogramFrases.png.png',
                 dpi=300, # Dots per inch
                 frameon='false',
