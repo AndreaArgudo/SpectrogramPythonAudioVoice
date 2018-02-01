@@ -11,10 +11,10 @@ Created on Thu Sep 28 13:18:07 2017
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
-def graph_spectrogram(wav_file):
+def SpectrogramSentences(wav_file):
     rate, data = get_wav_info(wav_file)
-    nfft = 256  # Length of the windowing segments
-    fs = 44100    # Sampling frequency
+    nfft = 256  # frames , windows length
+    fs = 44100    # Sampling frequency # 2050Hz, 44100Hz
     pxx, freqs, bins, im = plt.specgram(data, nfft,fs)
     plt.axis('on')
         
@@ -29,8 +29,8 @@ def graph_spectrogram(wav_file):
     plt.title('Patient: prueba_658140, Sentence: 1' )
     plt.show()
 
-# paciente aleatorio:/Users/Andrea/AnacondaProjects/Pacientes_audios_2017_2018/658140.wav
-# frase sin ruido: la mujer limpiaba el suelo todos los días
+# Ramdom normal hearing patient:/Users/Andrea/AnacondaProjects/Pacientes_audios_2017_2018/658140.wav
+# Navarra Test Corpus/Sentences with clue and noise(1): "La mujer limpiaba el suelo todos los días"
     
     
     plt.savefig('/Users/Andrea/AnacondaProjects/Lab5/SpectrogramFrases.png.png',
@@ -46,11 +46,11 @@ def graph_spectrogram(wav_file):
     plt.show()
     
 
-def get_wav_info(wav_file):
+def AudioSpectogram(wav_file):
     rate, data = wavfile.read(wav_file)
     return rate, data
     
 if __name__ == '__main__': # Main function
     wav_file = '/Users/Andrea/AnacondaProjects/Lab5/prueba_658140_procesada.wav' # Filename of the wav file
-    graph_spectrogram(wav_file)
+    SpectrogramSentences(wav_file)
     
